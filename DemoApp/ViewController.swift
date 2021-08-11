@@ -79,7 +79,9 @@ extension ViewController: OTDManagerProtocol {
 
 extension ViewController {
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        OTDManager.shared.openDebugScreen()
+        if motion == .motionShake {
+            OTDManager.shared.openDebugScreen()
+        }
     }
 }
 
